@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { SITE_CONFIG } from "@/config/site";
 import { ARTICLES_DATA } from "@/data/articles";
 
+export const dynamic = "force-static";
+
 export async function GET() {
   const urlList = [
     `${SITE_CONFIG.domain}/`,

@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { ARTICLES_DATA } from "@/data/articles";
 import { SITE_CONFIG } from "@/config/site";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const currentDate = "2026-10-26";
   const baseUrl = SITE_CONFIG.domain;
