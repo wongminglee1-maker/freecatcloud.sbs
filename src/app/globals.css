@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+:root {
+  --flagship-deep: #111C35;
+  --brand-blue: #315CFD;
+  --brand-blue-hover: #2548CA;
+  --brand-blue-light: #EEF2FF;
+  --pearl-white: #F8FAFD;
+  --signal-cyan: #14B8A6;
+  --signal-cyan-light: #F0FDFA;
+  --champagne-gold: #D3AC72;
+  --champagne-gold-light: #FDF9F0;
+  --body-gray: #475467;
+  --text-primary: #0F172A;
+  --border-light: #E2E8F0;
+  --border-medium: #CBD5E1;
+  --card-bg: #FFFFFF;
+  --card-subtle: #F1F5F9;
+}
+
+@theme inline {
+  --color-flagship-deep: var(--flagship-deep);
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-blue-hover: var(--brand-blue-hover);
+  --color-brand-blue-light: var(--brand-blue-light);
+  --color-pearl-white: var(--pearl-white);
+  --color-signal-cyan: var(--signal-cyan);
+  --color-signal-cyan-light: var(--signal-cyan-light);
+  --color-champagne-gold: var(--champagne-gold);
+  --color-champagne-gold-light: var(--champagne-gold-light);
+  --color-body-gray: var(--body-gray);
+  --color-text-primary: var(--text-primary);
+  --color-border-light: var(--border-light);
+  --color-border-medium: var(--border-medium);
+  --color-card-bg: var(--card-bg);
+  --color-card-subtle: var(--card-subtle);
+}
+
+body {
+  background-color: var(--pearl-white);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.65;
+  font-size: 16px;
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+/* Accessible focus ring */
+*:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 2px;
+}
+
+/* Navigation header alignment & anti-wrapping */
+header nav a,
+header nav button,
+header nav span,
+header .whitespace-nowrap {
+  white-space: nowrap !important;
+  word-break: keep-all !important;
+}
+
+/* Subtle enterprise grid pattern */
+.bg-enterprise-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(17, 28, 53, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 28, 53, 0.035) 1px, transparent 1px);
+}
+
+.bg-enterprise-grid-dark {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Enterprise Card Styling */
+.ultimate-card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  box-shadow: 0 4px 18px -2px rgba(17, 28, 53, 0.04);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ultimate-card:hover {
+  border-color: var(--border-medium);
+  box-shadow: 0 10px 30px -4px rgba(17, 28, 53, 0.08);
+}
+
+/* Dark enterprise hero gradient */
+.bg-hero-navy {
+  background: linear-gradient(135deg, #111C35 0%, #162447 60%, #1F305E 100%);
+}
+
+/* Glassmorphism accents */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
